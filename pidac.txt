@@ -1,52 +1,42 @@
-# placeholder file for pidac git tutorial
+# notes from pidac on github usage
+
+!!! to get out of vim: hit esc, :wq
+
+commands:
+ls 			# will show files in your directory
+ls -a 			# will show all files including those starting with "." (ie .gitignore)
+cd file\path 		# will change your directory
+cd ..			# moves directory up one folder
+mkdir NewFolderName 	# will create new folder in your current working directory (HINT: may want to then change cd to new directory)
+notepad 		# will open new empty text file
+notepad textfilename 	# will open desired text file
+
+
+ONCE IN YOUR DESIRED WD:
+git clone www.your git clone link.com # will pull your files from github and move them into your cd
+git status 		# will show what changes are pending, if any and which are ready to be committed
+git add file.ext 	# add file to queue for pushing changes to github
+git add . 		# add all pending files to queue
+git reset 		# cancel queue of added files, no longer ready to commit
+git commit -m "insert comment on what changes are" # will commit changes of files to git (REMEMBER!! add -m "comment" or will bring to vim window)
+git push		# pushes commits up to github
+git pull 		# pulls changes made on github to local instance
+gitk			# shows specifics on what changes were on github when pulling github instance
+rm filename.ext		# removes file BUT!!! is a permanent deletion so be careful or just do this via file explorer
+git pull upstream master # unsure
+git remote add upstream git://github.com/williamcioffi/pidacgit.git # telling git where forked and cloned git originated
+
+Steps when making changes on computer:
+1. git add
+2. git commit -m 
+3. git push
+at any point - git status to see changes, commit status
+
+
 
 notes from git bash window
 
 ###################################
-delan@Sarah-MGEL-Machine MINGW64 ~
-$ ls
-'3D Objects'/
- AppData/
-'Application Data'@
- Contacts/
- Cookies@
- Desktop/
- Documents/
- Downloads/
- Favorites/
- IntelGraphicsProfiles/
- Links/
-'Local Settings'@
- MicrosoftEdgeBackups/
- Music/
-'My Documents'@
- NetHood@
- NTUSER.DAT
- ntuser.dat.LOG1
- ntuser.dat.LOG2
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TM.blf
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000001.regtrans-ms
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000002.regtrans-ms
- ntuser.ini
- OneDrive/
- Pictures/
- PrintHood@
- Recent@
- Roaming/
-'Saved Games'/
- Searches/
- SendTo@
-'Start Menu'@
- Templates@
- Videos/
- Zotero/
- ZoteroMGEL/
- ZoteroOutdatedMay2018/
-
-delan@Sarah-MGEL-Machine MINGW64 ~
-$ cd git_stuff
-bash: cd: git_stuff: No such file or directory
-
 delan@Sarah-MGEL-Machine MINGW64 ~
 $ cd Desktop/git_stuff
 
@@ -62,10 +52,6 @@ remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (6/6), done.
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
-$ mkdir Desktop/idac_git
-mkdir: cannot create directory ‘Desktop/idac_git’: No such file or directory
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
 $ mkdir pidac_git
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
@@ -74,14 +60,6 @@ pidac_git/  pidac-test1/
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
 $ cd pidac-test1
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ ls
-DepthExtract_WOA2009.py  README.md
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ open -e
-bash: open: command not found
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ ls
@@ -98,11 +76,6 @@ Untracked files:
         pidac.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git add
-Nothing specified, nothing added.
-Maybe you wanted to say 'git add .'?
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git add pidac.txt
@@ -137,62 +110,6 @@ delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git add .
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git status
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
-
-        new file:   pidac.txt
-
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git commit -m 'i added a new file'
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'delan@Sarah-MGEL-Machine.(none)')
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git commit -m "i added a new file"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'delan@Sarah-MGEL-Machine.(none)')
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git config sed45@duke.edu
-error: invalid key: sed45@duke.edu
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git config "sed45@duke.edu"
-error: invalid key: sed45@duke.edu
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git config "delands"
-error: key does not contain a section: delands
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git config --global user.email sed45@duke.edu
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git commit -m "i add a new file"
 [master b16253a] i add a new file
  1 file changed, 1 insertion(+)
@@ -213,10 +130,6 @@ To https://github.com/delands/pidac-test1.git
    a6df68b..b16253a  master -> master
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ !SamwiseG27
-bash: !SamwiseG27: event not found
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git pull
 Already up to date.
 
@@ -234,66 +147,7 @@ Fast-forward
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git k
-git: 'k' is not a git command. See 'git --help'.
-
-The most similar commands are
-        am
-        fsck
-        gc
-        mv
-        p4
-        rm
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ gitk
-delan@Sarah-MGEL-Machine MINGW64 ~
-$ git status
-fatal: not a git repository (or any of the parent directories): .git
-
-delan@Sarah-MGEL-Machine MINGW64 ~
-$ git status
-fatal: not a git repository (or any of the parent directories): .git
-
-delan@Sarah-MGEL-Machine MINGW64 ~
-$ ls
-'3D Objects'/
- AppData/
-'Application Data'@
- Contacts/
- Cookies@
- Desktop/
- Documents/
- Downloads/
- Favorites/
- IntelGraphicsProfiles/
- Links/
-'Local Settings'@
- MicrosoftEdgeBackups/
- Music/
-'My Documents'@
- NetHood@
- NTUSER.DAT
- ntuser.dat.LOG1
- ntuser.dat.LOG2
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TM.blf
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000001.regtrans-ms
- NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000002.regtrans-ms
- ntuser.ini
- OneDrive/
- Pictures/
- PrintHood@
- Recent@
- Roaming/
-'Saved Games'/
- Searches/
- SendTo@
-'Start Menu'@
- Templates@
- Videos/
- Zotero/
- ZoteroMGEL/
- ZoteroOutdatedMay2018/
 
 delan@Sarah-MGEL-Machine MINGW64 ~
 $ cd Desktop/git_stuff/pidac-test1
@@ -376,23 +230,6 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ ls
-data/  DepthExtract_WOA2009.py  pidac.txt  README.md
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
-$ git status
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-        .gitignore
-
-nothing added to commit but untracked files present (use "git add" to track)
-
-delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git commit -m "hiding data foler"
 On branch master
 Your branch is ahead of 'origin/master' by 1 commit.
@@ -428,4 +265,222 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls -a
+./   .git/       data/                    pidac.txt
+../  .gitignore  DepthExtract_WOA2009.py  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ notepad
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ notepad pidac
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add .gitignore
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "added gitignore to prevent uploading secret docs"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ notepad
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  newfile.txt  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .txt
+        newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add .
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .txt
+        new file:   newfile.txt
+
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "add file only to delete"
+[master 425c895] add file only to delete
+ 2 files changed, 2 insertions(+)
+ create mode 100644 .txt
+ create mode 100644 newfile.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ rm newfile.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls -a
+./   .git/       .txt   DepthExtract_WOA2009.py  README.md
+../  .gitignore  data/  pidac.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    .txt
+        deleted:    newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -a
+[master c47fc70]    (use "git push" to publish your local commits) dfdkd
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 .txt
+ delete mode 100644 newfile.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ cd ..
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ ls
+pidac_git/  pidac-test1/
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ git clone https://github.com/delands/pidacgit.git
+Cloning into 'pidacgit'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ git remote add upstream git://github.com/williamcioffi/pidacgit.git
+fatal: not a git repository (or any of the parent directories): .git
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ cd pidacgit/
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git remote add upstream git://github.com/williamcioffi/pidacgit.git
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ ls
+changingtheclone.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        changingtheclone.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git add .
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   changingtheclone.txt
+
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git commit -m "changing the clone forked from wc"
+[master acbc1fd] changing the clone forked from wc
+ 1 file changed, 1 insertion(+)
+ create mode 100644 changingtheclone.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+git sTo https://github.com/delands/pidacgit.git
+   afbeef0..acbc1fd  master -> master
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master)
+$ git pull upstream master
+From git://github.com/williamcioffi/pidacgit
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> upstream/master
+Already up to date.
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidacgit (master) ###### POST WILL MERGING ALL OUR CHANGES TO MASTER GIT
+$ git pull upstream master
+remote: Counting objects: 16, done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 16 (delta 4), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (16/16), done.
+From git://github.com/williamcioffi/pidacgit
+ * branch            master     -> FETCH_HEAD
+   afbeef0..7850f81  master     -> upstream/master
+Updating acbc1fd..7850f81
+Fast-forward
+ SOMETHINGCRAZY.txt.txt | 0
+ addmyfile.txt          | 1 +
+ some_whales.txt        | 3 +++
+ 3 files changed, 4 insertions(+)
+ create mode 100644 SOMETHINGCRAZY.txt.txt
+ create mode 100644 addmyfile.txt
+ create mode 100644 some_whales.txt
+
+
+
+
 
