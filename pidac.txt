@@ -247,3 +247,185 @@ The most similar commands are
 
 delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ gitk
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ ls
+'3D Objects'/
+ AppData/
+'Application Data'@
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ IntelGraphicsProfiles/
+ Links/
+'Local Settings'@
+ MicrosoftEdgeBackups/
+ Music/
+'My Documents'@
+ NetHood@
+ NTUSER.DAT
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TM.blf
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000002.regtrans-ms
+ ntuser.ini
+ OneDrive/
+ Pictures/
+ PrintHood@
+ Recent@
+ Roaming/
+'Saved Games'/
+ Searches/
+ SendTo@
+'Start Menu'@
+ Templates@
+ Videos/
+ Zotero/
+ ZoteroMGEL/
+ ZoteroOutdatedMay2018/
+
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ cd Desktop/git_stuff/pidac-test1
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   pidac.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add .
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   pidac.txt
+
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "adding command line code for future reference"
+[master b98f636] adding command line code for future reference
+ 1 file changed, 247 insertions(+), 1 deletion(-)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ vim .gitignore
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls -a
+./   .git/       data/                    pidac.txt
+../  .gitignore  DepthExtract_WOA2009.py  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+data/  DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "hiding data foler"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+        .gitignore
+
+nothing added to commit but untracked files present
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.98 KiB | 1.98 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+sitTo https://github.com/delands/pidac-test1.git
+   911672d..b98f636  master -> master
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+
