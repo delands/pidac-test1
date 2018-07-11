@@ -1,3 +1,249 @@
 # placeholder file for pidac git tutorial
 
-sjgdjs changes to pull
+notes from git bash window
+
+###################################
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ ls
+'3D Objects'/
+ AppData/
+'Application Data'@
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ IntelGraphicsProfiles/
+ Links/
+'Local Settings'@
+ MicrosoftEdgeBackups/
+ Music/
+'My Documents'@
+ NetHood@
+ NTUSER.DAT
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TM.blf
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{bbd549a8-5de5-11e8-94b5-00059a3c7a00}.TMContainer00000000000000000002.regtrans-ms
+ ntuser.ini
+ OneDrive/
+ Pictures/
+ PrintHood@
+ Recent@
+ Roaming/
+'Saved Games'/
+ Searches/
+ SendTo@
+'Start Menu'@
+ Templates@
+ Videos/
+ Zotero/
+ ZoteroMGEL/
+ ZoteroOutdatedMay2018/
+
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ cd git_stuff
+bash: cd: git_stuff: No such file or directory
+
+delan@Sarah-MGEL-Machine MINGW64 ~
+$ cd Desktop/git_stuff
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ ls
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ git clone https://github.com/delands/pidac-test1.git
+Cloning into 'pidac-test1'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ mkdir Desktop/idac_git
+mkdir: cannot create directory ‘Desktop/idac_git’: No such file or directory
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ mkdir pidac_git
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ ls
+pidac_git/  pidac-test1/
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff
+$ cd pidac-test1
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+DepthExtract_WOA2009.py  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ open -e
+bash: open: command not found
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ ls
+DepthExtract_WOA2009.py  pidac.txt  README.md
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        pidac.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add pidac.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   pidac.txt
+
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git reset
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        pidac.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git add .
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   pidac.txt
+
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m 'i added a new file'
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'delan@Sarah-MGEL-Machine.(none)')
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "i added a new file"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'delan@Sarah-MGEL-Machine.(none)')
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git config sed45@duke.edu
+error: invalid key: sed45@duke.edu
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git config "sed45@duke.edu"
+error: invalid key: sed45@duke.edu
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git config "delands"
+error: key does not contain a section: delands
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git config --global user.email sed45@duke.edu
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git commit -m "i add a new file"
+[master b16253a] i add a new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pidac.txt
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git push
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': delands
+!SamwiseG27Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/delands/pidac-test1.git
+   a6df68b..b16253a  master -> master
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ !SamwiseG27
+bash: !SamwiseG27: event not found
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git pull
+Already up to date.
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/delands/pidac-test1
+   b16253a..911672d  master     -> origin/master
+Updating b16253a..911672d
+Fast-forward
+ pidac.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ git k
+git: 'k' is not a git command. See 'git --help'.
+
+The most similar commands are
+        am
+        fsck
+        gc
+        mv
+        p4
+        rm
+
+delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
+$ gitk
