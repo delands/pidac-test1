@@ -119,7 +119,7 @@ delan@Sarah-MGEL-Machine MINGW64 ~/Desktop/git_stuff/pidac-test1 (master)
 $ git push
 Logon failed, use ctrl+c to cancel basic credential prompt.
 Username for 'https://github.com': delands
-!SamwiseG27Enumerating objects: 4, done.
+Enumerating objects: 4, done.
 Counting objects: 100% (4/4), done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
